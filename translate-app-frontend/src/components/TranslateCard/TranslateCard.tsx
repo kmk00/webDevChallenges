@@ -25,7 +25,6 @@ const TranslateCard = ({
   } = useInputStore();
 
   const switchLanguages = () => {
-    console.log(languageFrom, languageTo);
     const from = languageFrom;
     setLanguageFrom(languageTo);
     setLanguageTo(from);

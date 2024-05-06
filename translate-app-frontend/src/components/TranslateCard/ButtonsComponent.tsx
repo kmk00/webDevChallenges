@@ -1,6 +1,5 @@
 import Button from "./Button";
 import TranslateButton from "./TranslateButton";
-import soundIcon from "../../assets/sound_max_fill.svg";
 import copyIcon from "../../assets/Copy.svg";
 import { useInputStore } from "../../store";
 
@@ -10,7 +9,6 @@ const ButtonsComponent = ({ type }: { type: "from" | "to" }) => {
   return (
     <div className="buttons-component">
       <div className="buttons-component__left">
-        <Button icon={soundIcon} />
         <Button
           action={() =>
             type === "from"

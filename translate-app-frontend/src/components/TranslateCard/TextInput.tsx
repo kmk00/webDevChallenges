@@ -1,13 +1,44 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useInputStore } from "../../store";
 
 const TextInput = () => {
-  const { inputValue, setInputValue } = useInputStore();
+  const {
+    inputValue,
+    setInputValue,
+    languageFrom,
+    languageTo,
+    setTranslatedInput,
+    setError,
+  } = useInputStore();
 
   const handleChange = (e: any) => {
-    console.log(e.target.value);
     setInputValue(e.target.value);
   };
+
+  useEffect(() => {
+    const getData = setTimeout(async () => {
+      if (inputValue.length > 0) {
+        try {
+          const response = await fetch(
+            `https://api.mymemory.translated.net/get?q=${inputValue}!&langpair=${languageFrom}|${languageTo}`
+          );
+          const data = await response.json();
+
+          if (data.responseStatus != 200) {
+            setError(data.responseDetails);
+            return;
+          }
+
+          setTranslatedInput(data.matches[0].translation);
+          setError("");
+        } catch (error) {
+          throw error;
+        }
+      }
+    }, 1000);
+
+    return () => clearTimeout(getData);
+  }, [inputValue]);
 
   return (
     <div className="translate-input">

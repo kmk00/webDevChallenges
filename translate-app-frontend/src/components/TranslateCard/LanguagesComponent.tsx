@@ -26,7 +26,7 @@ const LanguagesComponent = ({
   if (type === "from") {
     return (
       <div className="language">
-        {languages.map((language: Language, index: number) => (
+        {languages.map((language: Language) => (
           <label
             className="language__label"
             key={language.language}
@@ -58,7 +58,7 @@ const LanguagesComponent = ({
   if (type === "to") {
     return (
       <div className="language">
-        {languages.map((language: Language, index: number) => (
+        {languages.map((language: Language) => (
           <label
             className="language__label"
             key={language.language}
