@@ -1,6 +1,6 @@
-const Button = ({ icon }: { icon: string }) => {
+const Button = ({ icon, action }: { icon: string; action?: () => void }) => {
   return (
-    <button className="action-button">
+    <button onClick={action} className="action-button">
       <img src={icon} alt="Icon"></img>
     </button>
   );

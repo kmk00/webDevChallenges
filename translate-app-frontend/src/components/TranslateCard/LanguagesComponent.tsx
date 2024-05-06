@@ -34,13 +34,12 @@ const LanguagesComponent = ({
           >
             <p className="language__text ">
               {language.language}
-              {index === languages.length - 1 && (
-                <img
-                  className="language__arrow"
-                  src={expandArrow}
-                  alt="expand arrow"
-                />
-              )}
+
+              <img
+                className="language__arrow"
+                src={expandArrow}
+                alt="expand arrow"
+              />
             </p>
             <input
               onChange={handleLanguageChange}
@@ -67,13 +66,11 @@ const LanguagesComponent = ({
           >
             <p className="language__text ">
               {language.language}
-              {index === languages.length - 1 && (
-                <img
-                  className="language__arrow"
-                  src={expandArrow}
-                  alt="expand arrow"
-                />
-              )}
+              <img
+                className="language__arrow"
+                src={expandArrow}
+                alt="expand arrow"
+              />
             </p>
             <input
               onChange={handleLanguageChange}
