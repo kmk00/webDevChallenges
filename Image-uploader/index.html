@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html data-theme="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <picture>
+          <source
+            media="(max-width: 768px)"
+            srcset="./assets/logo-small.svg"
+            type="image/svg+xml"
+          />
+          <img src="./assets/logo.svg" alt="logo" class="logo" />
+        </picture>
+
+        <div class="theme-switch-wrapper">
+          <label class="theme-switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <img class="theme-switch__icon moon" src="./assets/Moon_fill.svg" />
+            <img class="theme-switch__icon sun" src="./assets/Sun_fill.svg" />
+          </label>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div id="drop-container" class="container">
+        <label class="wrapper" id="drop-zone" for="file-upload">
+          <img src="./assets/logo-small.svg" />
+          <p class="text text--bold">
+            <span class="text--highlight">Browse files</span>
+          </p>
+          <p class="text text--small">JPG, PNG or GIF - Max file size 2MB</p>
+          <input type="file" id="file-upload" />
+        </label>
+      </div>
+
+      <div class="uploaded-image-wrapper">
+        <img class="uploaded-image" />
+      </div>
+    </main>
+  </body>
+</html>
